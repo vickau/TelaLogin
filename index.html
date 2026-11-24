@@ -1,0 +1,52 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entrar</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <section id="auth-view">
+      <h1 id="title">Entrar</h1>
+      <p class="subtitle">Acesse sua conta ou crie uma nova.</p>
+
+      <form id="auth-form">
+        <div id="name-field" class="field" hidden>
+          <label for="name">Nome</label>
+          <input id="name" type="text" autocomplete="name" placeholder="Seu nome">
+        </div>
+
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" autocomplete="email" required placeholder="voce@email.com">
+        </div>
+
+        <div class="field">
+          <label for="password">Senha</label>
+          <input id="password" type="password" autocomplete="current-password" required placeholder="Sua senha">
+        </div>
+
+        <button id="submit-button" type="submit">Entrar</button>
+      </form>
+
+      <p id="message" class="message" aria-live="polite"></p>
+
+      <p class="toggle">
+        <span id="toggle-text">Ainda não tem uma conta?</span>
+        <button id="toggle-mode" class="link-button" type="button">Criar conta</button>
+      </p>
+    </section>
+
+    <section id="logged-view" hidden>
+      <h1>Você entrou!</h1>
+      <p>Conta: <strong id="user-email"></strong></p>
+      <button id="logout-button" type="button">Sair</button>
+    </section>
+  </main>
+</body>
+</html>
